@@ -43,7 +43,7 @@ export default function App() {
 
       {/* This is navbar component */}
       <NavBar
-        title="Texter"
+        title="Texer"
         about="About"
         contact="Contact Us"
         mode={mode}
