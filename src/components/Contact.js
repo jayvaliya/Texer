@@ -27,12 +27,12 @@ export default function Contact(props) {
       <form ref={form} onSubmit={sendEmail}>
 
       <div className="input-group my-3">
-        <span className="input-group-text" id="inputGroup-sizing-default">Name</span>
+        <span className="input-group-text" id="inputGroup-sizing-default">Your Name</span>
         <input type="text" className="form-control" name="user_name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
       </div>
 
       <div className="input-group my-3">
-        <span className="input-group-text" id="inputGroup-sizing-default">Email</span>
+        <span className="input-group-text" id="inputGroup-sizing-default">Your Email</span>
         <input type="email" className="form-control" name="user_email" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" />
       </div>
 
@@ -43,7 +43,6 @@ export default function Contact(props) {
 
       <input type="submit" className="btn btn-primary mx-2 my-2" value="Send" />
       </form>
-      
     </div>
   )
 }
