@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Texer/static/css/main.bfbe2d0c.css",
-    "main.js": "/Texer/static/js/main.6508df0a.js",
+    "main.js": "/Texer/static/js/main.df3cf2b0.js",
     "static/js/787.4b42b418.chunk.js": "/Texer/static/js/787.4b42b418.chunk.js",
     "index.html": "/Texer/index.html",
     "main.bfbe2d0c.css.map": "/Texer/static/css/main.bfbe2d0c.css.map",
-    "main.6508df0a.js.map": "/Texer/static/js/main.6508df0a.js.map",
+    "main.df3cf2b0.js.map": "/Texer/static/js/main.df3cf2b0.js.map",
     "787.4b42b418.chunk.js.map": "/Texer/static/js/787.4b42b418.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.bfbe2d0c.css",
-    "static/js/main.6508df0a.js"
+    "static/js/main.df3cf2b0.js"
   ]
 }
