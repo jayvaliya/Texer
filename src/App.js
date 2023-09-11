@@ -22,7 +22,7 @@ export default function App() {
     }, 2000);
   }
 
-  
+
   const toggleMode = () => {
     if (mode === 'light') {
       setMode('dark');
@@ -42,12 +42,12 @@ export default function App() {
     <BrowserRouter basename='/Texer'>
 
       {/* This is navbar component */}
-      <NavBar 
-      title="Texter" 
-      about="About"
-      contact="Contact Us"
-      mode={mode} 
-      toggleMode={toggleMode} />
+      <NavBar
+        title="Texter"
+        about="About"
+        contact="Contact Us"
+        mode={mode}
+        toggleMode={toggleMode} />
 
 
       {/* This is alert component */}
@@ -62,7 +62,6 @@ export default function App() {
           <div className="container">
             <TextForm heading="Enter text here:" mode={mode} />
           </div>
-
         } />
 
         <Route path="/about" element={
@@ -71,7 +70,10 @@ export default function App() {
             <About mode={mode} />
           </div>
         } />
-        <Route path='/contact' element={<Contact heading = "Contact us" mode={mode} />} />
+        <Route path='/contact' element={
+          <Contact heading="Contact us" mode={mode} />
+        } />
+
       </Routes>
     </BrowserRouter>
   );
