@@ -39,7 +39,7 @@ export default function App() {
   }
   return (
 
-    <BrowserRouter>
+    <BrowserRouter basename='/Texer'>
 
       {/* This is navbar component */}
       <NavBar 
