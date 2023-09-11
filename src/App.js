@@ -1,4 +1,3 @@
-import './App.css';
 
 import NavBar from './components/Navbar';
 import TextForm from './components/Form';
