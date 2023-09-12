@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 export default function Form(props) {
-    const [text, setText] = useState('Enter text');
+    const [text, setText] = useState('');
     const [word1, setWord1] = useState('');
     const [word2, setWord2] = useState('');
     const [mode, setmode] = useState(false);
@@ -63,7 +63,7 @@ export default function Form(props) {
             <div>
                 <div className="mb-3">
                     <h1 >{props.heading}</h1>
-                    <textarea value={text} className={`form-control rounded text-dark`} onChange={handleChange} id="exampleFormControlTextarea1" rows="9"></textarea>
+                    <textarea value={text} className={`form-control rounded text-dark`} placeholder="Enter text" onChange={handleChange} id="exampleFormControlTextarea1" rows="9"></textarea>
                 </div>
 
             </div>
