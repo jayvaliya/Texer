@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 
-export default function Form(props) {
+const Form = (props) => {
     const [text, setText] = useState('');
     const [word1, setWord1] = useState('');
     const [word2, setWord2] = useState('');
@@ -11,29 +11,26 @@ export default function Form(props) {
         // Function to change text to uppercase.
         let newText = text.toUpperCase();
         setText(newText);
-        // props.showAlert('Converted to uppercase','success');
     }
 
     const lowerCase = () => {
         // Function to change text to lower case.
         let newText = text.toLowerCase();
         setText(newText);
-        // props.showAlert('Converted to lowercase','success');
-        
+
     }
 
     const clear = () => {
         // Function to change text to lower case.
         let newText = '';
         setText(newText);
-        // props.showAlert('Cleard text','success');
-
     }
 
     const handleChange = (event) => {
         // Function to change the state.
         setText(event.target.value);
     }
+
     const handleChange1 = (event) => {
         // Function to change the state.
         setWord1(event.target.value);
@@ -47,29 +44,49 @@ export default function Form(props) {
         console.log(text);
         let newText = text.split(word1).join(word2);
         setText(newText);
-        // props.showAlert('Change has been made','success');
-
     }
+
     const reset = () => {
-        setText('Enter text');
+        setText('');
         setWord1('');
         setWord2('');
-        // props.showAlert('reseted','success');
     }
-    
-    
+
+    const copyToClipboard = () => {
+        // Create a temporary textarea element
+        const tempTextarea = document.createElement('textarea');
+        tempTextarea.value = text;
+
+        // Append the temporary textarea to the DOM
+        document.body.appendChild(tempTextarea);
+
+        // Select the text in the temporary textarea
+        tempTextarea.select();
+
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+
+        // Remove the temporary textarea from the DOM
+        document.body.removeChild(tempTextarea);
+
+        // Show a message or perform any desired action after copying
+        alert('Text copied to clipboard');
+    }
+
     return (
-        <div className={`text-${props.mode==='dark'?'light':'dark'}`}>
+        <div className={`text-${props.mode === 'dark' ? 'light' : 'dark'}`}>
             <div>
                 <div className="mb-3">
                     <h1 >{props.heading}</h1>
-                    <textarea value={text} className={`form-control rounded text-dark`} placeholder="Enter text" onChange={handleChange} id="exampleFormControlTextarea1" rows="9"></textarea>
+                    <textarea value={text} id="txt" className={`form-control rounded text-dark`} placeholder="Enter text" onChange={handleChange} id="exampleFormControlTextarea1" rows="9"></textarea>
                 </div>
 
             </div>
             <button className="btn btn-primary mx-2 my-2" onClick={upperCase}>Convert to UPPERCASE</button>
             <button className="btn btn-primary mx-2 my-2" onClick={lowerCase}>Convert to lowercase</button>
+            <button className="btn btn-primary mx-2 my-2" onClick={copyToClipboard}>Copy text</button>
             <button className="btn btn-primary mx-2 my-2" onClick={clear}>Clear text</button>
+
 
             <div className='my-3'>
                 Replace:
@@ -96,7 +113,7 @@ export default function Form(props) {
 
             <div className="mb-3">
                 <h1>Text summary:</h1>
-                <p>{text.split(" ").length} words and {text.split("").length} charactors.</p>
+                <p>{`${text === '' ? '0' : text.split(" ").length - 1} words and ${text === '' ? '0' : text.split("").length} charactors.`}</p>
                 <p>{0.008 * text.split(" ").length}Minutes of read.</p>
             </div>
 
@@ -105,3 +122,5 @@ export default function Form(props) {
         </div>
     )
 }
+
+export default Form
